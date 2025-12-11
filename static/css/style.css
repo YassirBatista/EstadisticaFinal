@@ -256,10 +256,10 @@ input:focus, textarea:focus { border-color: var(--accent-green); }
 /* CURSOR PERSONALIZADO */
 /* Cursor normal (flecha) */
 body {
-    cursor: url('cursor.png'), auto;
+    cursor: url('cursor.png') 0 0, auto;
 }
 
 /* Cursor de "mano" (botones y links) */
 a, button, .file-card, .close-btn, label, input[type="file"]::-webkit-file-upload-button {
-    cursor: url('pointer.png'), pointer;
+    cursor: url('cursor.png') 0 0, pointer;
 }
