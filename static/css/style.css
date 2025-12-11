@@ -191,3 +191,64 @@ input:focus, textarea:focus { border-color: var(--accent-green); }
     border-color: var(--accent-cyan);
     box-shadow: 0 0 10px rgba(125, 207, 255, 0.1);
 }
+
+
+/* --- ESTILOS DE EDICIÓN EN MODAL --- */
+.desc-container {
+    position: relative;
+    margin-top: 15px;
+}
+
+/* Botones pequeños (Lápiz y Guardar) */
+.icon-btn {
+    position: absolute;
+    top: -35px; /* Lo subimos al lado del título */
+    right: 0;
+    background: transparent;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-btn:hover {
+    background: var(--accent-cyan);
+    color: var(--bg-main);
+}
+
+.save-mode {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+.save-mode:hover {
+    background: var(--accent-green);
+}
+
+/* Área de texto para editar */
+.edit-textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--accent-cyan);
+    color: var(--text-primary);
+    padding: 10px;
+    border-radius: 8px;
+    font-family: inherit;
+    min-height: 100px;
+    resize: vertical;
+    outline: none;
+    margin-top: 10px;
+}
+
+.visit-btn {
+    background: var(--accent-cyan); 
+    color: var(--bg-main); 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold;
+    display: inline-block;
+}
+
+.hidden { display: none !important; }

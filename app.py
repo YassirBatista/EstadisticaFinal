@@ -136,6 +136,23 @@ def delete_file(file_id):
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+    #  Busqueda
+
+@app.route('/update/<int:file_id>', methods=['PUT'])
+def update_file(file_id):
+    try:
+        data = request.get_json()
+        new_desc = data.get('description')
+        
+        conn = get_db_connection()
+        conn.execute('UPDATE files SET description = ? WHERE id = ?', (new_desc, file_id))
+        conn.commit()
+        conn.close()
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
