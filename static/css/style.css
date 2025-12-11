@@ -141,3 +141,53 @@ input:focus, textarea:focus { border-color: var(--accent-green); }
     word-break: break-word;
     white-space: pre-wrap; /* Respeta los saltos de línea del textarea */
 }
+
+/* --- BARRA DE BÚSQUEDA Y FILTROS --- */
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    flex: 1; /* Ocupa todo el espacio posible */
+    position: relative;
+    min-width: 200px;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-cyan);
+}
+
+.filter-input {
+    width: 100%;
+    padding: 12px 12px 12px 40px; /* Espacio para el icono */
+    background: var(--bg-input);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    outline: none;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.filter-select {
+    padding: 12px 20px;
+    background: var(--bg-input);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--text-primary);
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.filter-input:focus, .filter-select:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(125, 207, 255, 0.1);
+}

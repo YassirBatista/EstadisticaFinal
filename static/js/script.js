@@ -251,3 +251,40 @@ document.getElementById('closeModal').addEventListener('click', () => {
     overlay.classList.remove('active');
     setTimeout(() => overlay.classList.add('hidden'), 300);
 });
+
+// --- LÓGICA DE BÚSQUEDA Y FILTRADO ---
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+
+if(searchInput && categoryFilter) {
+    searchInput.addEventListener('keyup', filterGallery);
+    categoryFilter.addEventListener('change', filterGallery);
+}
+
+function filterGallery() {
+    const text = searchInput.value.toLowerCase();
+    const cat = categoryFilter.value;
+    const cards = document.querySelectorAll('.file-card');
+
+    cards.forEach(card => {
+        // Obtenemos el título y el tipo (tag) de cada tarjeta
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const typeTag = card.querySelector('.file-tag').textContent.toLowerCase();
+        
+        // Verificamos si coincide con el texto
+        const matchesText = title.includes(text);
+        
+        // Verificamos si coincide con la categoría
+        let matchesCat = false;
+        if (cat === 'all') matchesCat = true;
+        else if (cat === 'link' && typeTag === 'url') matchesCat = true; // URL en tarjeta = link en select
+        else if (typeTag.includes(cat)) matchesCat = true;
+
+        // Mostrar u ocultar
+        if (matchesText && matchesCat) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}

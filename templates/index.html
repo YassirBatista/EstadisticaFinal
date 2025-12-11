@@ -28,16 +28,31 @@
     <div class="container">
         
         <header id="inicio" class="hero animate-in">
-            <div class="terminal-badge">v.3.5 STABLE-CORE</div>
+            <div class="terminal-badge">v.3.6 SEARCH-ENABLED</div>
             <h1 class="logo-text">Análisis Estadístico &<br>Probabilidad</h1>
             <p class="hero-desc">
-                Esta plataforma integrada que resume y organiza todo el material sobre temas, módulos, gráficos y tareas realizadas durante el semestre. Su objetivo es servir como un repositorio accesible para visualizar, gestionar y analizar la información estadística y probabilística abordada en clase. Los usuarios pueden consultar diversos recursos, como gráficos, tareas y módulos, para realizar un seguimiento fácil de su progreso o acceder a material ya tratado. Además, la página permite subir nuevos archivos y enlaces, creando así un espacio centralizado y organizado para el aprendizaje y la revisión de conceptos clave.
+                Plataforma integrada para organizar material sobre temas, módulos y gráficos. 
+                Repositorio accesible para visualizar y gestionar información estadística.
             </p>
         </header>
 
         <section id="gallery-section" class="gallery-container animate-in">
             <div class="section-header">
                 <h2><i class="ri-database-2-line"></i> Repositorio de Datos</h2>
+            </div>
+
+            <div class="filter-bar">
+                <div class="search-wrapper">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar archivo por título..." class="filter-input">
+                </div>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">Todo</option>
+                    <option value="img">Imágenes</option>
+                    <option value="pdf">PDFs</option>
+                    <option value="link">Enlaces</option>
+                    <option value="doc">Docs</option>
+                </select>
             </div>
             <div id="gallery" class="files-grid"></div>
         </section>
