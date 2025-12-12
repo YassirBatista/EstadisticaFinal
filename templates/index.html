@@ -23,8 +23,7 @@
     <div id="modalOverlay" class="modal-overlay hidden">
         <div class="modal-content">
             <button id="closeModal" class="close-btn"><i class="ri-close-line"></i></button>
-            <div id="modalBody">
-                </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
@@ -33,6 +32,7 @@
         <header id="inicio" class="hero animate-in">
             <div class="terminal-badge">v.4.0 FINAL-RELEASE</div>
             <h1 class="logo-text">Probabilidad y Estadística<br><span style="font-size:1.5rem; color:var(--accent-pink);">EST 226</span></h1>
+            
             <p class="hero-desc">
                 Este repositorio digital unifica todo nuestro trabajo del semestre. 
                 Aquí podrás visualizar gráficamente nuestros análisis, consultar los talleres realizados 
@@ -58,32 +58,34 @@
                         <strong>Asignatura:</strong> Probabilidad y Estadística (EST 226)<br>
                         <strong>Docente:</strong> Profa. Milagros García
                     </p>
-                    <p style="font-size: 0.95rem;">
-                        Este curso nos ha sumergido en el análisis de datos, desde la estadística descriptiva hasta la inferencial, 
-                        proporcionándonos las herramientas matemáticas necesarias para interpretar fenómenos aleatorios.
-                    </p>
+                    
+                    <div style="font-size: 0.9rem; margin-top: 10px; padding-top:10px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color:var(--accent-green)">Temario del Semestre:</strong>
+                        <ul class="member-list" style="margin-top: 8px;">
+                            <li>• Estadística Descriptiva</li>
+                            <li>• Introducción a la Probabilidad</li>
+                            <li>• Variables Aleatorias y sus Distribuciones</li>
+                            <li>• Regresión y Correlación</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="info-card" style="grid-column: 1 / -1;">
                     <h3 class="info-title"><i class="ri-node-tree"></i> Estructura del Sistema</h3>
                     <p style="margin-bottom: 15px;">
-                        Esta es la arquitectura real de archivos que hace funcionar la plataforma, integrando Flask, SQLite y JS:
+                        Arquitectura real de los archivos del proyecto desplegado:
                     </p>
                     <div class="tree-container">
                         <pre class="tree-code">
-ESTADISTICA_FINAL/
-├── <span class="tree-file">app.py</span>              <span class="comment"># Servidor Backend (Flask + Python)</span>
-├── <span class="tree-file">database.db</span>         <span class="comment"># Base de Datos (SQLite)</span>
+PROYECTO/
+├── <span class="tree-file">app.py</span>              <span class="comment"># Lógica del Servidor (Flask)</span>
 ├── <span class="tree-folder">templates/</span>
-│   └── <span class="tree-file">index.html</span>      <span class="comment"># Interfaz de Usuario </span>
+│   └── <span class="tree-file">index.html</span>      <span class="comment"># Estructura de la Página</span>
 └── <span class="tree-folder">static/</span>
     ├── <span class="tree-folder">css/</span>
-    │   ├── <span class="tree-file">style.css</span>   <span class="comment"># Diseño Visual </span>
-    │   ├── <span class="tree-file">cursor.png</span>  <span class="comment"># Assets Gráficos</span>
-    │   └── <span class="tree-file">pointer.png</span>
-    ├── <span class="tree-folder">js/</span>
-    │   └── <span class="tree-file">script.js</span>   <span class="comment"># Lógica de la página</span>
-    └── <span class="tree-folder">uploads/</span>        <span class="comment"># Almacenamiento de Archivos</span></pre>
+    │   └── <span class="tree-file">style.css</span>   <span class="comment"># Estilos Visuales</span>
+    └── <span class="tree-folder">js/</span>
+        └── <span class="tree-file">script.js</span>   <span class="comment"># Funcionalidad Dinámica</span></pre>
                     </div>
                 </div>
 
@@ -187,12 +189,10 @@ ESTADISTICA_FINAL/
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     </script>
-    
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
